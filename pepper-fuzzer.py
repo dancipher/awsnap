@@ -1,6 +1,9 @@
 #!/usr/bin/env python2.7
 # -*- coding: utf-8 -*-
 
+# 2013 zulla@zulla.org
+# All rights reversed. ;)
+
 import json
 import os
 
@@ -11,8 +14,9 @@ default_payload = "-0.00001"
 
 def shift_zeros(s):
   """
-  @author: Daniel Zulla (zulla@mit.edu)
-  
+  Parse and shift memory addresses of the 
+  __TEXT.__cstring section of the Mach-O binary 
+ 
   """
 
   s = list(s)
@@ -26,8 +30,12 @@ def shift_zeros(s):
 
 def read_functions():
   """
-  @author: Daniel Zulla (zulla@mit.edu)
-  
+  Read the pre-parsed functions and generate the
+  Javascript. Extraction of these functions should
+  happen automatically here, ftw
+
+  @@FIXME 
+ 
   """
 
   global projects, default_payload
@@ -43,8 +51,8 @@ def read_functions():
 
 def add_new_project(name, dataset):
   """
-  @author: Daniel Zulla (zulla@mit.edu)
-  
+  Function for beauty 
+ 
   """
   global projects
 
@@ -52,8 +60,9 @@ def add_new_project(name, dataset):
 
 def read_binaries():
   """
-  @author: Daniel Zulla (zulla@mit.edu)
-  
+  Get the memory addresses of __TEXT.__cstrings
+  out of the binary 
+ 
   """
 
   global projects
